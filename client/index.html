@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      function sineTest() {
+        socket.emit('sine test');
+      }
+      function sendTestString(str) {
+        socket.emit('string', str);
+      }
+      function sendKey(k) {
+        socket.emit('key', k);
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#" onClick="sineTest()">Sine Test</a>
+    <br/><br/>
+    <a href="#" onClick="sendTestString('test')">Send "test"</a>
+    <br/><br/>
+    <a href="#" onClick="sendKey('enter')">Send "enter"</a>
+  </body>
+</html>
